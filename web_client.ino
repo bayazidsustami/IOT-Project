@@ -1,49 +1,4 @@
 #include <WiFi.h>
-#include <WebServer.h>
-#include "DHT.h"
-
-// Uncomment one of the lines below for whatever DHT sensor type you're using!
-#define DHTTYPE DHT11   // DHT 11
-//#define DHTTYPE DHT21   // DHT 21 (AM2301)
-//#define DHTTYPE DHT22   // DHT 22  (AM2302), AM2321
-
-/Put your SSID & Password/
-const char* ssid = "vivo 1612";  // Enter SSID here
-const char* password = "uh010697";  //Enter Password here
-
-WebServer server(80);
-
-// DHT Sensor
-uint8_t DHTPin = 2; 
-               
-// Initialize DHT sensor.
-DHT dht(DHTPin, DHTTYPE);                
-
-float Temperature;
-float Humidity;
- 
-void setup() {
-  Serial.begin(115200);
-  delay(100);
-  
-  pinMode(DHTPin, INPUT);
-
-  dht.begin();              
-
-  Serial.println("Connecting to ");
-  Serial.println(ssid);
-
-  //…
-By @Bayazid Sustami M N
-[11:12, 7/18/2019] +62 813-9260-7478: /*
- *  This sketch sends data via HTTP GET requests to data.sparkfun.com service.
- *
- *  You need to get streamId and privateKey at data.sparkfun.com and paste them
- *  below. Or just customize this script to talk to other HTTP servers.
- *
- */
-
-#include <WiFi.h>
 
 const char* ssid     = "TP-Link_4D4A";
 const char* password = "87293630";
